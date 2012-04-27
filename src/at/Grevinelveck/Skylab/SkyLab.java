@@ -7,13 +7,13 @@ import org.bukkit.command.*;
 import org.bukkit.entity.Player;
 public class SkyLab {
 
-	static SLFunctions MessageOne;
-	static Systemstatus SS;
-	static LsleepThread LST;
+	static SLFunctions messageOne;
+	static Systemstatus sS;
+	static LSleepThread lSt;
 	public SkyLab(){	}
 	public static void main(String[] args){
 //set System status
-SS=new Systemstatus();
+sS=new Systemstatus();
 //on command event
 public boolean onCommand(CommandSender sender, Command cmd, String commandLable, String[]args){
 	Player player = (Player) sender;
@@ -27,9 +27,10 @@ public boolean onCommand(CommandSender sender, Command cmd, String commandLable,
 		}
 			return true;
 //Run SLF with sleepthread
-MessageOne=new SLFunctions(TP);
+messageOne=new SLFunctions();
 //Activate LightningAOE
-LST=new LsleepThread(TP);
+lSt=new LsleepThread();
+wait();
 //Ban or kick if needed with appropriate message
 //Power down message
 	
