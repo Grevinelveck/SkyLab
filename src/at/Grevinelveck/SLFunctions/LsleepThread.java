@@ -27,6 +27,7 @@ import org.bukkit.entity.Player;
 		      world.strikeLightning(newloc);
 		    }
 		     catch (InterruptedException x) {
+		    	 return;
 			}
 		    count++;
 		}
