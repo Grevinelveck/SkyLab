@@ -1,5 +1,6 @@
 package at.Grevinelveck.Skylab;
 
+
 import at.Grevinelveck.SLFunctions.*;
 
 import org.bukkit.World;
@@ -11,9 +12,8 @@ public class SkyLab {
 	static MSleepThread mST;
 	static LSleepThread lSt;
 	public SkyLab(){	}
-	public static void main(String[] args){
-//set System status
-sS=new Systemstatus();
+
+
 //on command event
 public boolean onCommand(CommandSender sender, Command cmd, String commandLable, String[]args){
 	Player player = (Player) sender;
@@ -24,19 +24,24 @@ public boolean onCommand(CommandSender sender, Command cmd, String commandLable,
 		}else if (args.length==1){
 			if (player.getServer().getPlayer(args[0]!=null)){
 				Player targetplayer=player.getServer().getPlayer(args[0]);
-		}
-			return true;
+			
 mST=new MSleepThread();
 wait();
-lSt=new LSleepThread();
+lSt=new LSleepThread(player);
 wait();
 //Ban or kick if needed with appropriate message
 //Power down message
+return true;
+			}
+			return false;
 	
 		
 		}
 }
 }
-	}
+	
+public static void main(String[] args){
+	sS=new Systemstatus();
+	
 }
-
+}

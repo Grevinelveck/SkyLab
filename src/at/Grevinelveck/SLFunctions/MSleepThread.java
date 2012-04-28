@@ -7,7 +7,7 @@ public class MSleepThread {
 	public class SleepTnterrupt implements Runnable {
 		public void run() {
 			int loop=0;
-			String[] skyLabMessageArray={"Skylab online.  Charging primary coils.","Acquiring designated target.","Target found, Powering secondary coils","Taget locked.  "+ targetPlayer+" will now be terminated."};
+			String[] skyLabMessageArray={"Skylab online.  Charging primary coils.","Acquiring designated target.","Target found, Powering secondary coils","Taget locked.  /*+ targetPlayer+*/ will now be terminated."};
 		    while (loop<skyLabMessageArray.length){
 			try {
 				Bukkit.broadcast(skyLabMessageArray[loop], null);
@@ -17,4 +17,5 @@ public class MSleepThread {
 		    }
 		  }
 	}
+}
 }
