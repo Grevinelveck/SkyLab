@@ -1,47 +1,35 @@
 package at.Grevinelveck.Skylab;
 
 
+import java.util.logging.Logger;
+
 import at.Grevinelveck.SLFunctions.*;
 
-import org.bukkit.World;
-import org.bukkit.command.*;
-import org.bukkit.entity.Player;
-public class SkyLab {
+import org.bukkit.plugin.PluginDescriptionFile;
+import org.bukkit.plugin.java.JavaPlugin;
 
-	static Systemstatus sS;
-	static MSleepThread mST;
-	static LSleepThread lSt;
+
+public class SkyLab extends JavaPlugin{
+	static SkyLabCommandExecutor skyLabKill;
+
+
 	public SkyLab(){	}
 
-
-//on command event
-public boolean onCommand(CommandSender sender, Command cmd, String commandLable, String[]args){
-	Player player = (Player) sender;
-	World world = player.getWorld();
-	if (commandLable.equalsIgnoreCase("SkyLab")){
-		if(args.length==0){
-			player.sendMessage("SkyLab requires a target to fire");
-		}else if (args.length==1){
-			if (player.getServer().getPlayer(args[0]!=null)){
-				Player targetplayer=player.getServer().getPlayer(args[0]);
-			
-mST=new MSleepThread();
-wait();
-lSt=new LSleepThread(player);
-wait();
-//Ban or kick if needed with appropriate message
-//Power down message
-return true;
-			}
-			return false;
-	
-		
-		}
-}
+	public final Logger logger = Logger.getLogger("Minecraft");
+@Override
+	public void onDisable(){
+		PluginDescriptionFile pdfFile=this.getDescription();
+		this.logger.info(pdfFile.getName()+" is offnline");
+	}
+@Override
+	public void onEnable(){
+		PluginDescriptionFile pdfFile=this.getDescription();
+		this.logger.info(pdfFile.getName()+" is online");
+		skyLabKill = new SkyLabCommandExecutor(this);
+		getCommand("SkyLab").setExecutor(skyLabKill);
 }
 	
 public static void main(String[] args){
-	sS=new Systemstatus();
 	
 }
 }
