@@ -10,6 +10,7 @@ import org.bukkit.entity.Player;
 
 		private Player player;
 		public LSleepThread(Player player){this.player=player;}
+		@Override
 		public void run(){
 			int count=0;
 			while (count<10)
