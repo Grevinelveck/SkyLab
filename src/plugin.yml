@@ -1,10 +1,10 @@
 name: "SkyLab"
-main: "at.Grevinelveck.SkyLab.SkyLab"
+main: "at.Grevinelveck.skylab.skylab"
 version: "1.1"
 
 
 commands:
-   basic:SkyLab
+   SkyLab:
       description: This command brings the power of your orbital death ray onto an annoyance.
       usage: /SkyLab [player]
       permission: SkyLab.Deathray
