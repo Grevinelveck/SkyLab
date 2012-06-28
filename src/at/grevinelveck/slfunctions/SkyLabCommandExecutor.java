@@ -3,7 +3,7 @@ package at.grevinelveck.slfunctions;
 import org.bukkit.command.*;
 import org.bukkit.entity.Player;
 
-import at.Grevinelveck.Skylab.SkyLab;
+import at.grevinelveck.skylab.SkyLab;
 
 public class SkyLabCommandExecutor implements CommandExecutor {
 	static MSleepThread mST;
