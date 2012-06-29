@@ -25,7 +25,7 @@ public class SkyLab extends JavaPlugin {
 	public void onEnable() {
 		PluginDescriptionFile pdfFile = this.getDescription();
 		this.logger.info(pdfFile.getName() + " is online");
-		skyLabKill = new SkyLabCommandExecutor(this);
+		skyLabKill = new SkyLabCommandExecutor();
 		getCommand("SkyLab").setExecutor(skyLabKill);
 	}
 

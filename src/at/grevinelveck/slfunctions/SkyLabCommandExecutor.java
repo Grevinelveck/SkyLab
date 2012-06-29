@@ -3,34 +3,48 @@ package at.grevinelveck.slfunctions;
 import org.bukkit.command.*;
 import org.bukkit.entity.Player;
 
-import at.grevinelveck.skylab.SkyLab;
-
 public class SkyLabCommandExecutor implements CommandExecutor {
-	static MSleepThread mST;
-	static LSleepThread lSt;
-
-	private SkyLab plugin;
-
-	public SkyLabCommandExecutor(SkyLab plugin) {
-		this.plugin = plugin;
-	}
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd,
 			String commandLable, String[] args) {
 		Player player = (Player) sender;
 		if (commandLable.equalsIgnoreCase("SkyLab")) {
-			if (args.length == 0) {
+			switch (args.length) {
+			case 0:
 				player.sendMessage("SkyLab requires a target to fire");
-			} else if (args.length == 1) {
+				break;
+			case 1:
 				if (player.getServer().getPlayer(args[0]) != null) {
-					mST = new MSleepThread();
-					lSt = new LSleepThread(player);
-					// Ban or kick if needed with appropriate message
-					// Power down message
-					return true;
-				}
+					Thread mST = new Thread(new MSleepThread(player, "none"));
 
+					mST.run();
+					return true;
+				} else {
+					player.sendMessage("Target not found");
+				}
+				break;
+			case 2:
+				if (args[0].equalsIgnoreCase("ban")
+						|| args[0].equalsIgnoreCase("kick")
+						|| args[0].equalsIgnoreCase("none")) {
+
+					String type = args[0];
+					if (player.getServer().getPlayer(args[1]) != null) {
+						Thread mST = new Thread(new MSleepThread(player, type));
+
+						mST.run();
+						return true;
+					} else {
+						player.sendMessage("Target not found");
+					}
+				} else {
+					player.sendMessage("Invalid type: availiable types:");
+					player.sendMessage("none, kick, ban");
+				}
+				break;
+			default:
+				player.sendMessage("Too many arguments!");
 			}
 		}
 		return false;
