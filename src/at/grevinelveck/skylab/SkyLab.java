@@ -18,7 +18,7 @@ public class SkyLab extends JavaPlugin {
 	@Override
 	public void onDisable() {
 		PluginDescriptionFile pdfFile = this.getDescription();
-		this.logger.info(pdfFile.getName() + " is offnline");
+		this.logger.info(pdfFile.getName() + " is offline");
 	}
 
 	@Override

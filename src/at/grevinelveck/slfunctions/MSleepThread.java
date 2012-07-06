@@ -22,10 +22,7 @@ public class MSleepThread implements Runnable {
 
 		for (int i = 0; i < skyLabMessageArray.length; i++) {
 
-			Bukkit.broadcastMessage(skyLabMessageArray[i]);// TODO:This may not
-															// be the most
-															// indicated
-															// method
+			Bukkit.broadcastMessage(skyLabMessageArray[i]);
 			if (!player.isOnline()) {
 				if (type.equalsIgnoreCase("ban")) {
 					player.setBanned(true);
@@ -75,7 +72,7 @@ public class MSleepThread implements Runnable {
 					+ lockOne, upPlayer.getLocation().getY(), upPlayer
 					.getLocation().getZ() + lockTwo);
 			world.strikeLightning(newloc);
-			world.createExplosion(newloc, 0);
+			world.createExplosion(newloc, 1);
 
 		}
 		if (type.equalsIgnoreCase("kick")) {
