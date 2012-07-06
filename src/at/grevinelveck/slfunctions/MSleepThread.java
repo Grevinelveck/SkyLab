@@ -38,7 +38,7 @@ public class MSleepThread implements Runnable {
 
 		}
 
-		for (int count = 0; count < 10; count++) {
+		for (int count = 0; count < 20; count++) {
 			if (!player.isOnline()) {
 				if (type.equalsIgnoreCase("ban")) {
 					player.setBanned(true);
@@ -53,26 +53,25 @@ public class MSleepThread implements Runnable {
 				Bukkit.broadcastMessage("Upload complete, shutting down.");
 				return;
 			}
-
-			Player upPlayer=Bukkit.getPlayer(player.getName());
-			Location location = upPlayer.getLocation();
-			World world = upPlayer.getWorld();
+			player.teleport(player);
+			Location location = player.getLocation();
+			World world = player.getWorld();
 			world.strikeLightning(location);
+			world.createExplosion(location, 1);
+			Random rand = new Random();
+			int lockOne = rand.nextInt(10) - 5;
+			int lockTwo = rand.nextInt(10) - 5;
+			Location newloc = new Location(world, player.getLocation().getX()
+					+ lockOne, player.getLocation().getY(), player
+					.getLocation().getZ() + lockTwo);
+			world.strikeLightning(newloc);
+			world.createExplosion(newloc, 1);
 			try {
-				Thread.sleep(500);
+				Thread.sleep(250);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
-			Random rand = new Random();
-			int lockOne = rand.nextInt(10) - 5;
-			int lockTwo = rand.nextInt(10) - 5;
-			Location newloc = new Location(world, upPlayer.getLocation().getX()
-					+ lockOne, upPlayer.getLocation().getY(), upPlayer
-					.getLocation().getZ() + lockTwo);
-			world.strikeLightning(newloc);
-			world.createExplosion(newloc, 1);
 
 		}
 		if (type.equalsIgnoreCase("kick")) {
