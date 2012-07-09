@@ -10,7 +10,6 @@ import org.bukkit.entity.Player;
 public class MSleepThread implements Runnable {
 	private Player player;
 	private String type;
-
 	@Override
 	public void run() {
 		String[] skyLabMessageArray = {
@@ -31,7 +30,7 @@ public class MSleepThread implements Runnable {
 				return;
 			}
 			try {
-				Thread.sleep(4000);
+				Thread.sleep(3000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
