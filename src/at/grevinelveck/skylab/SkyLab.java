@@ -2,7 +2,7 @@ package at.grevinelveck.skylab;
 
 import java.util.logging.Logger;
 
-import at.grevinelveck.slfunctions.*;
+import at.grevinelveck.skylab.functions.*;
 
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
