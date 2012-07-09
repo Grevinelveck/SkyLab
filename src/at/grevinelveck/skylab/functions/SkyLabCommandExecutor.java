@@ -4,8 +4,10 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.*;
 import org.bukkit.entity.Player;
 
-public class SkyLabCommandExecutor implements CommandExecutor {
+import at.grevinelveck.skylab.SkyLab;
 
+public class SkyLabCommandExecutor implements CommandExecutor {
+	private SkyLab skylab;
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd,
 			String commandLable, String[] args) {
@@ -57,5 +59,8 @@ public class SkyLabCommandExecutor implements CommandExecutor {
 			}
 		}
 		return false;
+	}
+	public SkyLabCommandExecutor(SkyLab skylab) {
+		this.skylab = skylab;
 	}
 }

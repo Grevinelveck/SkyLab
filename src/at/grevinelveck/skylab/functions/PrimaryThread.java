@@ -7,7 +7,11 @@ import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
 
+import at.grevinelveck.skylab.SkyLab;
+
 public class PrimaryThread implements Runnable {
+	private SkyLab skylab;
+
 	private Player player;
 	private String type;
 	@Override
