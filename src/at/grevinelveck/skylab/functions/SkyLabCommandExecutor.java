@@ -4,10 +4,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.*;
 import org.bukkit.entity.Player;
 
-import at.grevinelveck.skylab.SkyLab;
 
 public class SkyLabCommandExecutor implements CommandExecutor {
-	private SkyLab skylab;
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd,
 			String commandLable, String[] args) {
@@ -22,8 +20,6 @@ public class SkyLabCommandExecutor implements CommandExecutor {
 				Player player = Bukkit.getPlayer(args[0]);
 				if (player != null) {
 					Thread mST = new Thread(new PrimaryThread(player, "none"));
-					System.out
-							.println(/* eclipse shortcuts <3 */"herpderp thread created and launched");
 
 					mST.run();
 					return true;
@@ -59,8 +55,5 @@ public class SkyLabCommandExecutor implements CommandExecutor {
 			}
 		}
 		return false;
-	}
-	public SkyLabCommandExecutor(SkyLab skylab) {
-		this.skylab = skylab;
 	}
 }
