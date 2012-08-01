@@ -7,5 +7,19 @@ commands:
    SkyLab:
       description: This command brings the power of your orbital death ray onto an annoyance.
       usage: /SkyLab [player]
-      permission: SkyLab.Deathray
-      permission-message: You don't have <permission>
+permissions:
+    SkyLab.*:
+        description: Gives access to all SkyLab commands
+        children:
+            SkyLab.kick: true
+            SkyLab.ban: true
+            SkyLab.kill: true
+    SkyLab.kick:
+        description: Allows you to kick a user
+        default: op
+    SkyLab.ban:
+        description: Allows you to ban a user
+        default: op
+    SkyLab.kill:
+        description: Allows you to kill a user
+        default: op

@@ -1,18 +1,13 @@
 package at.grevinelveck.skylab;
-
-import java.util.HashMap;
-import java.util.Map;
 import java.util.logging.Logger;
 
 import at.grevinelveck.skylab.functions.*;
 
-import org.bukkit.Location;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class SkyLab extends JavaPlugin {
 	static SkyLabCommandExecutor skyLabKill;
-	public volatile Map<String,Location> pmap = new HashMap<String, Location>();
 
 
 	public final Logger logger = Logger.getLogger("Minecraft");

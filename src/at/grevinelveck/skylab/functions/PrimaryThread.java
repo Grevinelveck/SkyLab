@@ -98,9 +98,10 @@ public class PrimaryThread implements Runnable {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			player.kickPlayer("Your obituary report has been uploaded.  The dead may not mingle with the living.");
 			Bukkit.broadcastMessage(ChatColor.DARK_RED.toString() +ChatColor.BOLD.toString() +  "Upload complete.");
 			player.setBanned(true);
-			player.kickPlayer("Your obituary report has been uploaded.  The dead may not mingle with the living.");
+
 		}
 		try {
 			Thread.sleep(500);
