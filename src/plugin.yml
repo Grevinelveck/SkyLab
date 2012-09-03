@@ -1,12 +1,16 @@
 name: "SkyLab"
 main: "at.grevinelveck.skylab.SkyLab"
-version: "1.1"
+version: "2.0"
+softdepend: [WorldGuard]
 
 
 commands:
    SkyLab:
       description: This command brings the power of your orbital death ray onto an annoyance.
-      usage: /SkyLab [player]
+      usage: /SkyLab [mode] [player]
+   SL:
+      description: Short version
+      usage: /SL [mode] [player]
 permissions:
     SkyLab.*:
         description: Gives access to all SkyLab commands

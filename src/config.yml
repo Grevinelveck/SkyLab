@@ -1,0 +1,21 @@
+Settings:
+  poweringUpArray: 
+    - "Skylab online.  Charging primary coils."
+    - "Acquiring designated target."
+    - "Target found, Powering secondary coils"
+    - "Taget locked. %player% will now be terminated."
+  targetFled:
+    - "Target ran away, shutting down."
+  kickPlayer:
+    - "Clean up you act and try again"
+  banPlayer:
+    - "Target permanently destroyed. Uploading obituary."
+  messageToBannedPlayer:
+    - "Your obituary report has been uploaded.  The dead may not mingle with the living."
+  verifyIsBanned:
+    - "Upload complete."
+  poweringDownMessage:
+    - "Termination sequence complete.  SkyLab is powering down."
+  explosionsCauseCraters: true
+  respectWorldGuardRegion: true
+  explosionSize: 1
